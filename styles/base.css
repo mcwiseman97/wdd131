@@ -164,3 +164,7 @@ footer {
     padding: 20px;
     grid-column: 2/15;
 }
+
+p span{
+    color: rgb(235, 128, 128);
+}
