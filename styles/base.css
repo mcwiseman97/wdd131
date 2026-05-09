@@ -86,9 +86,10 @@ main div{
 }
 
 #itsMe {
-    width:80px;
-    height:auto;
-    float:right
+    grid-column: 2;
+    max-width: 100px;
+    height: auto;
+    border-radius: 8px;
 }
 
 #resourceDiv{
@@ -96,16 +97,48 @@ main div{
     margin-left: 5px;
     margin-right: 10px;
 }
+
+#bio {
+    grid-column: 1;
+    margin: 0;
+}
+
+
 div section {
+    display: grid;
+
+    grid-template-columns: 1fr auto; 
     background-color: #cccccc;
     color: black;
-    /*width:100%;*/
+    border: 1px black solid;
+    border-radius: 0px 0px 15px 15px;
+    border-top: none;
+    padding: 20px;
+    gap: 20px;
+    align-items: start;
+}
+
+section h3, 
+section hr, 
+section h3 + p {
+    grid-column: 1 / span 2;
+    text-align: center;
+}
+
+
+
+/*div section {
+    background-color: #cccccc;
+    color: black;
     height:100%;
     text-align: left;
     border: 1px black solid;
     border-radius: 0px 0px 15px 15px;
     border-top: none;
-}
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}*/
 
 #left_aside {
     grid-column: 13/15;
