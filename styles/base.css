@@ -84,6 +84,13 @@ main div{
     margin-left: 10px;
     margin-right: 5px;
 }
+
+#itsMe {
+    width:80px;
+    height:auto;
+    float:right
+}
+
 #resourceDiv{
     grid-column: 7/10;
     margin-left: 5px;
