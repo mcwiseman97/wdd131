@@ -5,11 +5,12 @@
 
 body{
     display:grid;
-    grid-template-columns: repeat(15, 1fr)
+    grid-template-columns: repeat(15, 1fr);
+    font-family: "Dosis", sans-serif;
 }
 
 header {
-    background-color: #464646;
+    background-color: rgb(42, 76, 111);
     color:white;
     min-height: 100px;
     padding: 15px 20px;
@@ -54,28 +55,40 @@ aside {
 
 main {
     min-height: 250px;
-    background-color: #979797;
     grid-column: 2/15;
     grid-template-columns: repeat(7, 1fr);
+    background-color: #cccccc;
     display: grid;
+    padding-bottom: 30px;
+
 }
 
-main section{
-    background-color: blue;
+main div{
+    background-color: rgb(42, 76, 111);
     border-radius: 15px;
     grid-template-columns: repeat(15, 1fr);
     padding: 5px;
+    border: 1px black;
+    color: white;
+    text-align: center;
 }
 
-#aboutSection{
+#aboutDiv{
     grid-column: 1/6;
     margin-left: 10px;
     margin-right: 5px;
 }
-#resourceSection{
+#resourceDiv{
     grid-column: 6/8;
     margin-left: 5px;
     margin-right: 10px;
+}
+section {
+    background-color: #cccccc;
+    color: black;
+    width:auto;
+    height:auto;
+    text-align: left;
 }
 
 #left_aside {
@@ -83,10 +96,11 @@ main section{
 }
 
 footer {
-    background-color: #464646;
+    background-color: rgb(42, 76, 111);
     color:white;    
+    align-content: center;
     text-align: center;
-    min-height: 150px;
+    padding: 20px;
     grid-column: 1/16;
 }
 
