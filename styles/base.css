@@ -3,8 +3,8 @@
     padding: 0;
 }
 
-#course-title {
-    padding-top: 10px;
+#course-title h1{
+    padding-top: 20px;
     padding-bottom: 10px;
 }
 
