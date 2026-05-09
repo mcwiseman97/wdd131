@@ -39,6 +39,10 @@ nav{
     align-content: center;
 }
 
+#homeNav li:hover {
+    color: yellow;
+}
+
 nav ul {
     display: flex;
     flex-direction: row;
