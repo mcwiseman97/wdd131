@@ -3,9 +3,10 @@
     padding: 0;
 }
 
-#course-title h1{
+#course-title{
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+    font-size: 2em;
 }
 
 h3 {
@@ -29,6 +30,13 @@ header {
 
 nav{
     width: 100%;
+}
+
+#homeNav {
+    background-color: #262626;
+    color:white;
+    min-height: 55px;
+    align-content: center;
 }
 
 nav ul {
@@ -155,11 +163,4 @@ footer {
     text-align: center;
     padding: 20px;
     grid-column: 2/15;
-}
-
-#homeNav {
-    background-color: #262626;
-    color:white;
-    min-height: 50px;
-    align-content: center;
 }
