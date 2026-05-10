@@ -1,0 +1,70 @@
+/* === BASE STYLES (Mobile First) === */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+main {
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* === MEDIA QUERY FOR LARGER SCREENS (Desktop) === */
+@media (min-width: 768px) {
+    /* When the screen is 768px or wider */
+    main {
+        padding: 20px;
+    }
+    section {
+        /* On larger screens, display sections side-by-side (e.g., 2 columns) */
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    /* This ensures that the sections take up roughly equal space on desktop */
+    section:nth-child(odd) {
+        flex: 1 1 45%; 
+    }
+    section:nth-child(even) {
+        flex: 1 1 45%;
+    }
+    section:nth-child(3) {
+        /* If we only have 3 sections, let the last one span 100% */
+        flex: 1 1 100%;
+    }
+}
+
+/* === MEDIA QUERY FOR VERY LARGE SCREENS (Wider Desktop) === */
+@media (min-width: 1200px) {
+    /* Adjust layout for very wide screens */
+    section {
+        flex: 1 1 32%; 
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
