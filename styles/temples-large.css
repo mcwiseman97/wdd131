@@ -1,0 +1,71 @@
+@media (min-width: 768px) {
+    /* When the screen is 768px or wider */
+    nav{
+        width:50%;
+        color:white;
+        min-height: 55px;
+        align-content: center;
+        float:right;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: space-around;
+    }
+    ul a {
+        text-decoration: none;
+        color: inherit;
+    }
+    #menu {
+		display: none; /* hide hamburger button */
+	}
+
+    h1 {
+		font-size: 2.5rem;
+		margin-left: 0;
+		text-align: center;
+	}
+	
+	h2 {
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	#menu {
+		display: none; /* hide hamburger button */
+	}
+
+	.navigation {
+		flex-direction: row;
+	}
+
+	.navigation a {
+		display: block;
+		flex: 1 1 100%;
+	}
+	
+	.stuff {
+		margin: 1rem auto;
+	}
+    
+  /*nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: space-around;
+    }
+    ul a {
+        text-decoration: none;
+        color: inherit;
+    }*/
+}
+
+/* === MEDIA QUERY FOR VERY LARGE SCREENS (Wider Desktop) === */
+@media (min-width: 1200px) {
+    /* Adjust layout for very wide screens */
+}
