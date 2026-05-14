@@ -12,15 +12,25 @@ body{
 header {
     grid-column: 2/15;
     background-color: rgb(42, 76, 111);
-    color:white;
-    align-content: center;
-    text-align: center;
-    display: flex;
+    color: white;
+    display: flex;                /* Enables flexbox */
+    justify-content: space-between; /* Pushes title left and menu right */
+    align-items: center;          /* Centers items vertically */
+    padding: 0 1rem;              /* Prevents button from touching the edge */
 }
+
 header p {
-    text-align: left;
-    padding: 5px 10px;
-    font-size: 2.5em;
+    font-size: 2.5rem;
+    padding: 10px 0;
+    /* Remove text-align: left; it's handled by justify-content now */
+}
+
+#menu {
+    font-size: 2rem; /* Slightly larger for visibility */
+    border: 0;
+    background: none;
+    color: #fff;     /* Changed from #000 to white to match your header */
+    cursor: pointer;
 }
 
 nav{
@@ -29,15 +39,7 @@ nav{
     min-height: 55px;
     align-content: center;
 }
-#menu {
-	font-size: 1.5rem;
-	border: 0;
-	background: none;
-	color: #000;
- 	position: _________;
-	________;
-	________;
-}
+
 
 #menu::before {
 	content: "☰";
