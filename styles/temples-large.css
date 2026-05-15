@@ -1,21 +1,21 @@
 @media (min-width: 768px) {
     #menu {
-        display: none; /* Hides hamburger on desktop */
+        display: none;
     }
 
     nav {
         display: flex;
-        justify-content: flex-end; /* Aligns links to the right */
-        width: auto;               /* Let it take only necessary space */
-        background-color: transparent; /* Match header color */
+        justify-content: flex-end;
+        width: auto;
+        background-color: transparent;
     }
 
     .navigation {
-        flex-direction: row; /* Horizontal links */
+        flex-direction: row; 
     }
 
     .navigation a {
-        display: block; /* Ensures links are visible on desktop */
+        display: block; 
         padding: 1rem;
     }
 }
