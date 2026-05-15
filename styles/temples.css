@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+header,footer, nav, .navigation, #menu, .navigation a{
+    background-color: rgb(42, 76, 111);
+    color: white;
+}
 
 body{
     display:grid;
@@ -10,9 +14,7 @@ body{
 }
 
 header {
-    grid-column: 2/15;
-    background-color: rgb(42, 76, 111);
-    color: white;
+    grid-column: 2/15; 
     display: flex;                /* Enables flexbox */
     justify-content: space-between; /* Pushes title left and menu right */
     align-items: center;          /* Centers items vertically */
@@ -22,20 +24,16 @@ header {
 header p {
     font-size: 2.5rem;
     padding: 10px 0;
-    /* Remove text-align: left; it's handled by justify-content now */
 }
 
 #menu {
-    font-size: 2rem; /* Slightly larger for visibility */
+    font-size: 2rem;
     border: 0;
     background: none;
-    color: #fff;     /* Changed from #000 to white to match your header */
     cursor: pointer;
 }
 
 nav{
-    color:white;
-    
     align-content: center;
 }
 
@@ -53,14 +51,12 @@ nav{
 	flex-direction: column;
 	justify-content: space-evenly;
 	list-style: none;
-	color: #fff;
 }
 .navigation a {
 	display: none;
 	padding: 1rem;
 	text-align: center;
 	text-decoration: none;
-	color: #fff;
 	font-weight: 700;
 }
 .navigation a:hover {
