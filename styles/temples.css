@@ -34,9 +34,8 @@ header p {
 }
 
 nav{
-    background-color: #262626;
     color:white;
-    min-height: 55px;
+    
     align-content: center;
 }
 
@@ -46,7 +45,7 @@ nav{
 }
 
 #menu.open::before {
-	content: "❎";
+	content: "Ｘ";
 }
 
 .navigation {
@@ -74,24 +73,24 @@ nav{
 }
 
 .active::before {
-	content: "📍";  /* just a wayfinding symbol for the user */
+	content: "📍";
 }
 
 
 main {
     grid-column: 2/15;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Creates flexible columns */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px 0;
 }
 
 main h1 {
-    grid-column: 1 / -1;   /* Forces it to span the full width of the main container */
-    display: block;        /* Ensures it sits on its own line */
-    text-align: center;    /* Centers the text horizontally */
-    margin: 1rem 0;        /* Adds vertical spacing */
-    width: 100%;           /* Ensures the element occupies the full horizontal space */
+    grid-column: 1 / -1;
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+    width: 100%;
 }
 
 figure {
@@ -100,14 +99,14 @@ figure {
 }
 
 figure img {
-    width: 100%;       /* Makes image fill the grid cell */
+    width: 100%;
     height: auto;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 figcaption {
     margin-top: 10px;
-    color: #3b1a5a;    /* Match the header purple */
+    color: #3b1a5a;
 }
 
 footer {
