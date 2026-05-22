@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Michael Wiseman | WDD131 | Place webpage</title>
-        <meta name="description" content="">
+        <meta name="description" content="WDD131 Course Project - Weather and Data Webpage for Iceland">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Michael Wiseman">
         <link rel="stylesheet" href="./styles/place.css">
@@ -12,32 +12,35 @@
     </head>
     <body>
         <header>
-            <h1 class="location">Place Holder Location</h1>
+            <h1 class="location">Reykjavík, Iceland</h1>
         </header>
         <main>
-            <img src="" alt="location name">
-            <container>
-                <div>
+            <img class="hero-image" src="images/pexels-david-hitchcock-2160795853-37001420.jpg" alt="Dramatic Icelandic mountain peak with green valleys">
+            
+            <div class="dashboard-container">
+                <div class="card data-card">
                     <h2>Data</h2>
-                    <p>Label:     Value</p>
-                    <p>Label:     Value</p>
-                    <p>Label:     Value</p>
-                    <p>Label:     Value</p>
-                    <p>Label:     Value</p>
-                    <p>Label:     Value</p>
+                    <p><span class="label">Country</span> <span class="value">Iceland</span></p>
+                    <p><span class="label">Capital</span> <span class="value">Reykjavík</span></p>
+                    <p><span class="label">Population</span> <span class="value">390,000</span></p>
+                    <p><span class="label">Language</span> <span class="value">Icelandic</span></p>
+                    <p><span class="label">Currency</span> <span class="value">Króna (ISK)</span></p>
+                    <p><span class="label">Time Zone</span> <span class="value">GMT (UTC+0)</span></p>
+                    <p><span class="label">Internet TLD</span> <span class="value">.is</span></p>
                 </div>
-                <div>
+                
+                <div class="card weather-card">
                     <h2>Weather</h2>
-                    <img src="" alt="weather icon name">
-                    <p>Label:     Value</p>
-                    <p>Label:     Value</p>
-                    <p>Label:     Value</p>
-                    <p>Label:     Value</p>
+                    <img class="weather-icon" src="https://img.icons8.com/fluent/96/cloud-with-rain.png" alt="Rain cloud icon">
+                    <p><span class="label">Temperature</span> <span class="value"><span id="temperature">5</span>°C</span></p>
+                    <p><span class="label">Conditions</span> <span class="value">Light Rain</span></p>
+                    <p><span class="label">Wind Speed</span> <span class="value"><span id="windspeed">15</span> km/h</span></p>
+                    <p><span class="label">Wind Chill</span> <span class="value" id="windchill">N/A</span></p>
                 </div>
-            </container>
+            </div>
         </main>
         <footer>
-            <p>ⓒ<span id="currentyear"></span> | Michael Wiseman | 🇺🇸 Texas, USA 🇺🇸</p>
+            <p>&copy;<span id="currentyear"></span> | Michael Wiseman | 🇺🇸 Texas, USA 🇺🇸</p>
             <p id="lastModified"></p>
         </footer>
     </body>
