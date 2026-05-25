@@ -90,24 +90,15 @@ const temples = [
   },
 ];
 
-
-
-
-// Target the HTML element where you want the cards to display
 const templeGrid = document.querySelector("#temple-grid");
 
-
 function displayTemples(templeList) {
-  // Clear out any existing content first
+
   templeGrid.innerHTML = "";
 
-  // Loop through the array
   templeList.forEach(temple => {
-    // 1. Create the outer section element and give it the class
     const card = document.createElement("section");
     card.classList.add("temple-card");
-
-    // 2. ONLY put the contents inside (Remove the duplicate inner div)
     card.innerHTML = `
       <h3>${temple.templeName}</h3>
       <p><span>Location:</span> ${temple.location}</p>
@@ -115,8 +106,6 @@ function displayTemples(templeList) {
       <p><span>Size:</span> ${temple.area.toLocaleString()} sq ft</p>
       <img src="${temple.imageUrl}" alt="${temple.templeName} Temple" loading="lazy">
     `;
-
-    // 3. Append it to the grid
     templeGrid.appendChild(card);
   });
 }
