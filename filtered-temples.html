@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Michael Wiseman | WDD131 | Temple Picture Album</title>
+        <meta name="description" content="Temples picture album. This album hold photos of a variety of differant beautiful temples around the world.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Michael Wiseman">
+        <link rel="stylesheet" href="./styles/filtered-temples.css">
+        <link rel="stylesheet" href="./styles/filtered-temples-large.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+        <header>
+            <p>Temple Album</p>
+            <nav>
+                <ul class="navigation">
+                    <li><a href="#" title="Home">Home</a></li>
+                    <li><a href="#" title="Old">Old</a></li>
+                    <li><a href="#" title="New">New</a></li>
+                    <li><a href="#" title="Large">Large</a></li>
+                    <li><a href="#" title="Small">Small</a></li>
+                </ul>
+            </nav>
+            <button id="menu" aria-label="Open navigation menu"></button>
+        </header>
+        <main>
+            <h1>Temple Images</h1>
+            <div id="temple-grid"></div>
+            
+        </main>
+        <footer>
+            <p>ⓒ<span id="currentyear"></span> | Michael Wiseman | 🇺🇸 Texas, USA 🇺🇸</p>
+            <p id="lastModified"></p>
+        </footer>
+    </body>
+    <script src="scripts/filtered-temples.js" defer></script>
+</html>
