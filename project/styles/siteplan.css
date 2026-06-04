@@ -1,0 +1,99 @@
+:root {
+    --color-one: #e3dfff;
+    --color-two: #d3c0cd;
+    --color-three: #b19994;
+    --color-four: #937666;
+    --color-five: #3d3a4b;
+
+    --font-one: 'Open Sans', sans-serif;
+    --font-two: 'Roboto', sans-serif;
+    --font-three: 'Lato', sans-serif;
+}
+
+/* Global Styles using your color palette */
+body {
+    font-family: var(--font-one);
+    background-color: #fcfbfe;
+    color: var(--color-five);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--color-five);
+    color: var(--color-one);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-two);
+    color: var(--color-five);
+}
+
+header h1 {
+    color: var(--color-one);
+    margin: 0;
+}
+
+/* Open Sans: Friendly and neutral for standard body text */
+.mainFont {
+    font-family: var(--font-one);
+    font-weight: 400;
+}
+
+/* Roboto: Geometric structure for strong, readable headings */  
+.headers {
+    font-family: var(--font-two);
+    font-weight: 700; /* Bold weight */
+}
+
+/* Lato: Warm and inviting for specific creative elements, buttons, or quotes */
+.casual-brand-text, blockquote, .btn-primary {
+    font-family: var(--font-three);
+    font-weight: 400; 
+}
+
+/* Color Swatches styling */
+#colorOne, #colorTwo, #colorThree, #colorFour, #colorFive {
+    display: inline-block;
+    padding: 5px 15px;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+#colorOne {
+    background-color: var(--color-one);
+    color: #111111; /* Clear pass */
+}
+#colorTwo {
+    background-color: var(--color-two);
+    color: #111111; /* Clear pass */
+}
+#colorThree {
+    background-color: var(--color-three);
+    color: #111111; /* Clear pass */
+}
+#colorFour {
+    background-color: var(--color-four);
+    color: #111111; /* Switched to dark text - this will now pass easily! */
+}
+#colorFive {
+    background-color: var(--color-five);
+    color: #ffffff; /* Clear pass on dark background */
+}
+
+/* Image styling for wireframes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px 0;
+    background-color: var(--color-two);
+    border: 1px solid var(--color-three);
+    border-radius: 6px;
+}
