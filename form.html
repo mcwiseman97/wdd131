@@ -22,7 +22,7 @@
         <form method="get" action="review.html">
             <div>
                 <label for="product-name">Product Name <span class="required">*</span></label>
-                <select id="product-name" name="productName" required>
+                <select id="product-name" name="productName" autocomplete="off" required>
                     <option value="" disabled selected>Select a Product ...</option>
                 </select>
 
@@ -48,7 +48,7 @@
                 </div>
 
                 <label for="install-date">Date of Installation <span class="required">*</span></label>
-                <input type="date" id="install-date" name="installDate" required>
+                <input type="date" id="install-date" name="installDate" autocomplete="off" required>
             </div>
 
             <div>
@@ -62,10 +62,10 @@
                 </div>
 
                 <label for="written-review">Written Review</label>
-                <textarea id="written-review" name="writtenReview" rows="5" placeholder="Share your experience with this product..."></textarea>
+                <textarea id="written-review" name="writtenReview" rows="5" autocomplete="off" placeholder="Share your experience with this product..."></textarea>
 
                 <label for="user-name">Your Name</label>
-                <input type="text" id="user-name" name="userName" placeholder="Optional">
+                <input type="text" id="user-name" name="userName" autocomplete="name" placeholder="Optional">
             </div>
 
             <input type="submit" value="Post Review">
