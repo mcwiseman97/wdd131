@@ -45,8 +45,6 @@ const products = [
       document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
   });
 
-
-
   document.addEventListener("DOMContentLoaded", () => {
     let reviewCount = parseInt(localStorage.getItem("reviewSubmissionCount")) || 0;
     
