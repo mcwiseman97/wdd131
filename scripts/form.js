@@ -48,3 +48,26 @@ const products = [
       document.getElementById("currentyear").textContent = new Date().getFullYear();
       document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
   });
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Retrieve current review count from localStorage or default to 0 if it doesn't exist
+    let reviewCount = parseInt(localStorage.getItem("reviewSubmissionCount")) || 0;
+    
+    // Increment the counter because a new form submission landed successfully
+    reviewCount++;
+    
+    // Save updated total count back to user profile local storage
+    localStorage.setItem("reviewSubmissionCount", reviewCount);
+    
+    // Update the visual output counter element on the page
+    const counterElement = document.getElementById("review-count");
+    if (counterElement) {
+        counterElement.textContent = reviewCount;
+    }
+
+    // Standard Universal Footer Date Injectors
+    document.getElementById("currentyear").textContent = new Date().getFullYear();
+    document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
+});
