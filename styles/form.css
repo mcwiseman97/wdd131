@@ -47,8 +47,8 @@ main {
 form {
     background-color: var(--form-bg);
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /*border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
 }
 
 fieldset {
@@ -89,7 +89,6 @@ select:focus, input:focus, textarea:focus {
     outline: 2px solid var(--secondary-color);
 }
 
-/* Star Rating System CSS-Only Mechanism */
 .stars {
     display: flex;
     flex-direction: row-reverse;
@@ -117,7 +116,6 @@ select:focus, input:focus, textarea:focus {
     content: "★";
 }
 
-/* Checkbox Structure Rules */
 .checkbox-group {
     display: flex;
     flex-direction: column;
@@ -157,7 +155,6 @@ input[type="submit"]:hover {
     background-color: var(--primary-color);
 }
 
-/* Confirmation Page Elements styling */
 .confirmation-main {
     display: flex;
     justify-content: center;
@@ -207,7 +204,7 @@ input[type="submit"]:hover {
     background-color: var(--primary-color);
 }
 
-/* Media Query Adaptations for Mobile Responsiveness */
+
 @media (max-width: 480px) {
     main {
         margin: 1rem auto;
@@ -217,43 +214,37 @@ input[type="submit"]:hover {
     }
 }
 
-
-
-
-/* Container for the entire star block */
 .radio-stars-group {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; /* Evenly distributes columns across the available width */
-    max-width: 450px;              /* Keeps the layout tight and professional */
+    justify-content: space-between;
+    max-width: 450px;
     margin-top: 0.75rem;
     margin-bottom: 1rem;
 }
 
-/* Individual star + radio stack */
 .star-option {
     display: flex;
     flex-direction: column;
-    align-items: center;    /* Centers stars and radio buttons vertically down the column midline */
-    flex: 1;                /* Forces every single column to occupy identical structural width */
+    align-items: center;
+    flex: 1;
     text-align: center;
 }
 
 .star-option label {
     display: block;
-    font-size: 1.2rem;       /* Slightly crisper text scale */
+    font-size: 1.2rem;
     color: #1f2937; 
     cursor: pointer;
     margin: 0;
     line-height: 1.4;
     font-weight: normal;
-    white-space: nowrap;    /* Prevents star strings from breaking into multiple lines on mobile screens */
+    white-space: nowrap;
 }
 
-/* Clear alignment and sizing for the raw radio bubbles */
 .star-option input[type="radio"] {
     width: 1.25rem;
     height: 1.25rem;
-    margin-top: 0.5rem;    /* Creates an elegant space between the stars and the input circle */
+    margin-top: 0.5rem;
     cursor: pointer;
 }
