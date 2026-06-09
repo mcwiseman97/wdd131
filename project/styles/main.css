@@ -1,0 +1,16 @@
+:root {
+    --color-bg-light: #e3dfff;
+    --color-card-bg: #d3c0cd;
+    --color-accent-soft: #b19994;
+    --color-accent-dark: #937666;
+    --color-primary: #3d3a4b;
+    --font-body: 'Open Sans', sans-serif;
+    --font-heading: 'Roboto', sans-serif;
+    --font-creative: 'Lato', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
