@@ -132,7 +132,7 @@ header {
     cursor: pointer;
     border-radius: 20px;
     margin: 0.25rem;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease; /* review */
 }
 
 .timer-controls .secondary-btn {
@@ -229,7 +229,6 @@ ul li button {
     flex-grow: 1;
 }
 
-/* Shared Sticky Footer Layout */
 footer {
     background-color: var(--color-primary);
     color: #ffffff;
@@ -243,7 +242,7 @@ footer a {
     text-decoration: none;
 }
 
-/* 🖥️ Responsive Dashboard Layout Engine Grid Transition (Media Query) */
+/* Start of the media section */
 @media (min-width: 768px) {
     .menu-toggle {
         display: none;
@@ -266,9 +265,27 @@ footer a {
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: 1.5rem;
+        align-items: start;
+    }
+
+    .timer-card {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .habits-card {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .tasks-card {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: stretch;
     }
 
     .notes-card {
         grid-column: 1 / span 2;
+        grid-row: 3;
     }
 }

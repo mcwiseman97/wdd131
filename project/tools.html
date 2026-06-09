@@ -17,25 +17,53 @@
     <header>
         <div class="header-container">
             <div class="logo-box">
-                <img src="images/will_and_way.webp" alt="Will and Way Logo" class="logo" width="60" height="60">
+                <img src="./images/will_and_way.webp" alt="Will and Way Logo" class="logo" width="60" height="60">
             </div>
             <span class="site-title">Will & Way</span>
             <button class="menu-toggle" aria-label="Toggle Menu">☰ Menu</button>
             <nav class="nav-menu">
-                <a href="index.html">Home</a>
+                <a href="index.html" class="active">Home</a>
                 <a href="about.html">Learn More</a>
-                <a href="tools.html" class="active">Tools</a>
+                <a href="tools.html">Tools</a>
             </nav>
         </div>
     </header>
-
-    <main class="content-container">
-
+    <main class="dashboard-grid">
+        <section class="card timer-card">
+            <div class="timer-display" id="timerDisplay">25:00</div>
+            <div class="timer-controls">
+                <button id="startBtn">Start</button>
+                <button id="stopBtn" class="secondary-btn">Stop</button>
+            </div>
+        </section>
+    
+        <section class="card tasks-card">
+            <div class="tasks-header">
+                <h2>Tasks</h2>
+                <span class="due-label">Due</span>
+            </div>
+            <ul id="taskList"></ul>
+            <div class="action-row">
+                <button id="addTaskBtn" class="action-btn">+ Task</button>
+            </div>
+        </section>
+    
+        <section class="card habits-card">
+            <h2>Habits</h2>
+            <ul id="habitList"></ul>
+            <div class="action-row">
+                <button id="addHabitBtn" class="action-btn">+ Habit</button>
+            </div>
+        </section>
+    
+        <section class="card notes-card">
+            <h2>Notes</h2>
+            <textarea id="notesArea" placeholder="Jot down quick thoughts..."></textarea>
+        </section>
     </main>
-
     <footer>
         <p>© 2026 | Michael Wiseman | 🇺🇸 Texas, USA 🇺🇸</p>
-        <p><a href="references.html">References</a></p>
     </footer>
+    
 </body>
 </html>
