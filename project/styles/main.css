@@ -122,3 +122,16 @@ header {
     margin-bottom: 1rem;
 }
 
+.timer-controls button, .action-btn {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+    margin: 0.25rem;
+    transition: background 0.2s ease;
+}
+
