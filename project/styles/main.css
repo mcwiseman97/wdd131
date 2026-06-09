@@ -197,4 +197,78 @@ ul li button {
     border-radius: 8px;
 }
 
+.custom-form label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
 
+.custom-form input[type="text"],
+.custom-form input[type="number"],
+.custom-form select,
+.custom-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border-radius: 4px;
+    border: 1px solid var(--color-accent-dark);
+}
+
+.checkbox-label {
+    display: flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal !important;
+}
+
+.content-container {
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    flex-grow: 1;
+}
+
+/* Shared Sticky Footer Layout */
+footer {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+footer a {
+    color: var(--color-bg-light);
+    text-decoration: none;
+}
+
+/* 🖥️ Responsive Dashboard Layout Engine Grid Transition (Media Query) */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+    
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        gap: 1.5rem;
+        margin-top: 0;
+    }
+
+    .nav-menu a {
+        border-bottom: none;
+        padding: 0;
+    }
+
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 1.5rem;
+    }
+
+    .notes-card {
+        grid-column: 1 / span 2;
+    }
+}
