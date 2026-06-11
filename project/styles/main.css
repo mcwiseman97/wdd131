@@ -229,6 +229,37 @@ ul li button {
     flex-grow: 1;
 }
 
+.content-container > h1 {
+    margin-bottom: 0.75rem;
+}
+
+.content-container > p {
+    margin-bottom: 1.5rem;
+}
+
+.pitch-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.pitch-grid .card {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.pitch-grid .card p + p {
+    margin-top: 1rem;
+}
+
+.pitch-grid .action-btn {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: auto;
+    padding-top: 1.25rem;
+    align-self: flex-start;
+}
+
 footer {
     background-color: var(--color-primary);
     color: #ffffff;
@@ -287,5 +318,9 @@ footer a {
     .notes-card {
         grid-column: 1 / span 2;
         grid-row: 3;
+    }
+
+    .pitch-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
