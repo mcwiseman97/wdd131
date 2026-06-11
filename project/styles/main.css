@@ -192,17 +192,8 @@ ul li button {
     resize: vertical; /* Review */
 }
 
-.custom-form fieldset {
-    border: 2px solid var(--color-accent-dark);
-    padding: 1rem;
+.custom-form h3 {
     margin-bottom: 1rem;
-    border-radius: 8px;
-}
-
-.custom-form legend {
-    font-family: var(--font-heading);
-    font-weight: 600;
-    padding: 0 0.5rem;
 }
 
 .custom-form .required {
