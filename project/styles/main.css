@@ -192,11 +192,21 @@ ul li button {
     resize: vertical; /* Review */
 }
 
-.custom-form feildset {
+.custom-form fieldset {
     border: 2px solid var(--color-accent-dark);
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 8px;
+}
+
+.custom-form legend {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    padding: 0 0.5rem;
+}
+
+.custom-form .required {
+    color: #8b0000;
 }
 
 .custom-form label {
@@ -206,6 +216,7 @@ ul li button {
 }
 
 .custom-form input[type="text"],
+.custom-form input[type="email"],
 .custom-form input[type="number"],
 .custom-form select,
 .custom-form textarea {
@@ -214,6 +225,37 @@ ul li button {
     margin-top: 0.25rem;
     border-radius: 4px;
     border: 1px solid var(--color-accent-dark);
+    font-family: var(--font-body);
+}
+
+.custom-form input[type="submit"] {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.subscribe-card {
+    margin-top: 1.5rem;
+}
+
+.subscribe-card > p {
+    margin-bottom: 1rem;
+}
+
+.content-container .card .action-btn {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.content-container .card ul a {
+    color: var(--color-primary);
+    font-weight: 600;
 }
 
 .checkbox-label {

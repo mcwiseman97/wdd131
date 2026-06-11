@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Michael Wiseman | WDD131 | Will & Way</title>
+    <title>Michael Wiseman | WDD131 | Will &amp; Way</title>
     <meta name="description" content="WDD131 Course Project on productivity tools and focusing on the things that will keep you moving forward in your goals.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Michael Wiseman">
@@ -17,14 +17,14 @@
     <header>
         <div class="header-container">
             <div class="logo-box">
-                <img src="./images/will_and_way.webp" alt="Will and Way Logo" class="logo" width="60" height="43">
+                <img src="images/will_and_way.webp" alt="Will and Way Logo" class="logo" width="60" height="43">
             </div>
-            <span class="site-title">Will & Way</span>
-            <button class="menu-toggle" aria-label="Toggle Menu">☰ Menu</button>
+            <span class="site-title">Will &amp; Way</span>
+            <button type="button" class="menu-toggle" aria-label="Toggle Menu">☰ Menu</button>
             <nav class="nav-menu">
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html">Home</a>
                 <a href="about.html">About Will &amp; Way</a>
-                <a href="tools.html">Tools</a>
+                <a href="tools.html" class="active">Tools</a>
             </nav>
         </div>
     </header>
@@ -32,8 +32,8 @@
         <section class="card timer-card">
             <div class="timer-display" id="timerDisplay">25:00</div>
             <div class="timer-controls">
-                <button id="startBtn">Start</button>
-                <button id="stopBtn" class="secondary-btn">Stop</button>
+                <button type="button" id="startBtn">Start</button>
+                <button type="button" id="stopBtn" class="secondary-btn">Stop</button>
             </div>
         </section>
     
@@ -44,7 +44,7 @@
             </div>
             <ul id="taskList"></ul>
             <div class="action-row">
-                <button id="addTaskBtn" class="action-btn">+ Task</button>
+                <button type="button" id="addTaskBtn" class="action-btn">+ Task</button>
             </div>
         </section>
     
@@ -52,7 +52,7 @@
             <h2>Habits</h2>
             <ul id="habitList"></ul>
             <div class="action-row">
-                <button id="addHabitBtn" class="action-btn">+ Habit</button>
+                <button type="button" id="addHabitBtn" class="action-btn">+ Habit</button>
             </div>
         </section>
     
@@ -63,7 +63,7 @@
     </main>
     <footer>
         <p>© 2026 | Michael Wiseman | 🇺🇸 Texas, USA 🇺🇸</p>
+        <p><a href="references.html">References</a></p>
     </footer>
-    
 </body>
 </html>

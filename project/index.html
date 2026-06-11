@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Michael Wiseman | WDD131 | Will & Way</title>
+    <title>Michael Wiseman | WDD131 | Will &amp; Way</title>
     <meta name="description" content="WDD131 Course Project on productivity tools and focusing on the things that will keep you moving forward in your goals.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Michael Wiseman">
@@ -19,8 +19,8 @@
             <div class="logo-box">
                 <img src="images/will_and_way.webp" alt="Will and Way Logo" class="logo" width="60" height="43" loading="lazy">
             </div>
-            <span class="site-title">Will & Way</span>
-            <button class="menu-toggle" aria-label="Toggle Menu">☰ Menu</button>
+            <span class="site-title">Will &amp; Way</span>
+            <button type="button" class="menu-toggle" aria-label="Toggle Menu">☰ Menu</button>
             <nav class="nav-menu">
                 <a href="index.html" class="active">Home</a>
                 <a href="about.html">About Will &amp; Way</a>
@@ -48,6 +48,39 @@
                 <a href="tools.html" class="action-btn">Manage Tasks</a>
             </section>
         </div>
+
+        <section class="card subscribe-card">
+            <h2>Monthly Productivity Tips</h2>
+            <p>Get one focused email each month with practical strategies for time management, task prioritization, and staying on track with your goals.</p>
+
+            <form class="custom-form" method="get" action="subscribe.html">
+                <fieldset>
+                    <legend>Newsletter Sign-Up</legend>
+
+                    <label for="subscriber-name">Your Name <span class="required">*</span></label>
+                    <input type="text" id="subscriber-name" name="subscriberName" autocomplete="name" required>
+
+                    <label for="subscriber-email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="subscriber-email" name="subscriberEmail" autocomplete="email" required>
+
+                    <label for="focus-area">Primary Focus <span class="required">*</span></label>
+                    <select id="focus-area" name="focusArea" required>
+                        <option value="" disabled selected>Select a focus area ...</option>
+                        <option value="time-management">Time Management</option>
+                        <option value="task-prioritization">Task Prioritization</option>
+                        <option value="habits">Building Habits</option>
+                        <option value="all">All of the Above</option>
+                    </select>
+
+                    <label class="checkbox-label" for="monthly-consent">
+                        <input type="checkbox" id="monthly-consent" name="monthlyConsent" value="yes" required>
+                        I agree to receive one monthly productivity email from Will &amp; Way.
+                    </label>
+                </fieldset>
+
+                <input type="submit" value="Subscribe">
+            </form>
+        </section>
     </main>
 
     <footer>
