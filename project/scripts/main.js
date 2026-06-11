@@ -1,169 +1,162 @@
-// Ensure application tracking contexts are initialized across script lifecycles safely
-document.addEventListener("DOMContentLoaded", () => {
-    initNavigation();
-// Only execute structural application state initializations if user context is on Home Dashboard view
+document.addEventListener("DOMContentLoaded", function () {
+    setupMenu();
+
     if (document.getElementById("timerDisplay")) {
-        initTimerEngine();
-        initTaskManager();
-        initHabitTracker();
-        initNotesEngine();
+        setupTimer();
+        setupTasks();
+        setupHabits();
+        setupNotes();
     }
 });
 
-//Mobile Hamburg Global Context Toggle Menu Execution
-function initNavigation() {
-    const toggleBtn = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-menu");
-    
-    if (toggleBtn && navMenu) {
-        toggleBtn.addEventListener("click", () => {
-            navMenu.classList.toggle("show");
+function setupMenu() {
+    const menuButton = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".nav-menu");
+
+    if (menuButton && menu) {
+        menuButton.addEventListener("click", function () {
+            menu.classList.toggle("show");
         });
     }
 }
 
+function setupTimer() {
+    let interval = null;
+    let secondsLeft = 25 * 60;
+    const display = document.getElementById("timerDisplay");
+    const startButton = document.getElementById("startBtn");
+    const stopButton = document.getElementById("stopBtn");
 
-//Pomodoro Control Engine Logic
-//Fulfills: DOM interaction, Multi-function tracking, Conditional branching
-function initTimerEngine() {
-    let timerInterval = null;
-    let timeRemaining = 25 * 60; // 25 Minutes standard production countdown threshold
-    const displayElement = document.getElementById("timerDisplay");
-    const startBtn = document.getElementById("startBtn");
-    const stopBtn = document.getElementById("stopBtn");
-
-    function updateDisplayString() {
-        const minutes = Math.floor(timeRemaining / 60);
-        const seconds = timeRemaining % 60;
-        // Template literal usage validation standard compliance
-        displayElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    function updateDisplay() {
+        const minutes = Math.floor(secondsLeft / 60);
+        const seconds = secondsLeft % 60;
+        display.textContent = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
     }
 
-    startBtn.addEventListener("click", () => {
-        if (timerInterval !== null) return; // Prevention pattern against baseline thread acceleration
-        
-        timerInterval = setInterval(() => {
-            if (timeRemaining > 0) {
-                timeRemaining--;
-                updateDisplayString();
+    startButton.addEventListener("click", function () {
+        if (interval !== null) {
+            return;
+        }
+
+        interval = setInterval(function () {
+            if (secondsLeft > 0) {
+                secondsLeft--;
+                updateDisplay();
             } else {
-                clearInterval(timerInterval);
-                timerInterval = null;
-                alert("Focus session completed successfully! Take a breather.");
-                timeRemaining = 25 * 60;
-                updateDisplayString();
+                clearInterval(interval);
+                interval = null;
+                alert("Focus session complete. Take a short break.");
+                secondsLeft = 25 * 60;
+                updateDisplay();
             }
         }, 1000);
     });
 
-    stopBtn.addEventListener("click", () => {
-        if (timerInterval !== null) {
-            clearInterval(timerInterval);
-            timerInterval = null;
+    stopButton.addEventListener("click", function () {
+        if (interval !== null) {
+            clearInterval(interval);
+            interval = null;
         }
     });
 }
 
-//Task State & Array Mutation Manager Engine
-//Fulfills: Objects, Arrays, Array Methods, LocalStorage, Template Literals
+function setupTasks() {
+    const list = document.getElementById("taskList");
+    const addButton = document.getElementById("addTaskBtn");
+    let tasks = JSON.parse(localStorage.getItem("ww_tasks"));
 
-function initTaskManager() {
-    const taskListElement = document.getElementById("taskList");
-    const addTaskBtn = document.getElementById("addTaskBtn");
+    if (!tasks) {
+        tasks = [
+            { id: 1, name: "Study WDD131 Coursework" },
+            { id: 2, name: "Review project requirements" }
+        ];
+    }
 
-    // Pull or set default placeholder array items array definitions objects dynamically
-    let tasks = JSON.parse(localStorage.getItem("ww_tasks")) || [
-        { id: 1, name: "Study WDD131 Coursework" },
-        { id: 2, name: "Meditate and Align Goals" },
-        { id: 3, name: "Python Architecture Brainstorm" }
-    ];
-
-    function renderTasks() {
-        taskListElement.innerHTML = "";
-        // Verification loop running native structural iteration methods processing
-        tasks.forEach(task => {
-            const li = document.createElement("li");
-            // Strict Template Literal requirement fulfillment engine execution
-            li.innerHTML = `<span>${task.name}</span><button data-id="${task.id}">✓</button>`;
-            taskListElement.appendChild(li);
+    function showTasks() {
+        list.innerHTML = "";
+        tasks.forEach(function (task) {
+            const item = document.createElement("li");
+            item.innerHTML = `<span>${task.name}</span><button type="button" data-id="${task.id}">✓</button>`;
+            list.appendChild(item);
         });
         localStorage.setItem("ww_tasks", JSON.stringify(tasks));
     }
 
-    addTaskBtn.addEventListener("click", () => {
-        const taskText = prompt("Enter task target title details:");
-        if (taskText && taskText.trim() !== "") {
-            const newTask = {
+    addButton.addEventListener("click", function () {
+        const name = prompt("Enter a task:");
+        if (name && name.trim() !== "") {
+            tasks.push({
                 id: Date.now(),
-                name: taskText.trim()
-            };
-            tasks.push(newTask);
-            renderTasks();
+                name: name.trim()
+            });
+            showTasks();
         }
     });
 
-    taskListElement.addEventListener("click", (e) => {
-        if (e.target.tagName === "BUTTON") {
-            const targetId = parseInt(e.target.getAttribute("data-id"));
-            // Array mutation standard structural target cleanup handling methods assignment
-            tasks = tasks.filter(task => task.id !== targetId);
-            renderTasks();
+    list.addEventListener("click", function (event) {
+        if (event.target.tagName === "BUTTON") {
+            const id = Number(event.target.getAttribute("data-id"));
+            tasks = tasks.filter(function (task) {
+                return task.id !== id;
+            });
+            showTasks();
         }
     });
 
-    renderTasks();
+    showTasks();
 }
 
-/**
- * Habits Tracking Manager Pipeline Routine Implementation
- */
-function initHabitTracker() {
-    const habitListElement = document.getElementById("habitList");
-    const addHabitBtn = document.getElementById("addHabitBtn");
+function setupHabits() {
+    const list = document.getElementById("habitList");
+    const addButton = document.getElementById("addHabitBtn");
+    let habits = JSON.parse(localStorage.getItem("ww_habits"));
 
-    let habits = JSON.parse(localStorage.getItem("ww_habits")) || [
-        { id: 1, title: "Scripture Study (30 min)" },
-        { id: 2, title: "Daily Physical Run" },
-        { id: 3, title: "Gratitude Journaling Execution" }
-    ];
+    if (!habits) {
+        habits = [
+            { id: 1, title: "Read for 30 minutes" },
+            { id: 2, title: "Take a daily walk" }
+        ];
+    }
 
-    function renderHabits() {
-        habitListElement.innerHTML = "";
-        habits.forEach(habit => {
-            const li = document.createElement("li");
-            li.innerHTML = `<span>${habit.title}</span><button data-id="${habit.id}">✕</button>`;
-            habitListElement.appendChild(li);
+    function showHabits() {
+        list.innerHTML = "";
+        habits.forEach(function (habit) {
+            const item = document.createElement("li");
+            item.innerHTML = `<span>${habit.title}</span><button type="button" data-id="${habit.id}">✕</button>`;
+            list.appendChild(item);
         });
         localStorage.setItem("ww_habits", JSON.stringify(habits));
     }
 
-    addHabitBtn.addEventListener("click", () => {
-        const habitText = prompt("Identify targeted habit item to build tracking profiles against:");
-        if (habitText && habitText.trim() !== "") {
-            habits.push({ id: Date.now(), title: habitText.trim() });
-            renderHabits();
+    addButton.addEventListener("click", function () {
+        const title = prompt("Enter a habit:");
+        if (title && title.trim() !== "") {
+            habits.push({
+                id: Date.now(),
+                title: title.trim()
+            });
+            showHabits();
         }
     });
 
-    habitListElement.addEventListener("click", (e) => {
-        if (e.target.tagName === "BUTTON") {
-            const targetId = parseInt(e.target.getAttribute("data-id"));
-            habits = habits.filter(h => h.id !== targetId);
-            renderHabits();
+    list.addEventListener("click", function (event) {
+        if (event.target.tagName === "BUTTON") {
+            const id = Number(event.target.getAttribute("data-id"));
+            habits = habits.filter(function (habit) {
+                return habit.id !== id;
+            });
+            showHabits();
         }
     });
 
-    renderHabits();
+    showHabits();
 }
 
-// Textarea Interactivity Input Event Caching Buffer Engine
-function initNotesEngine() {
-    const notesArea = document.getElementById("notesArea");
-    
-    // Recovery tracking logic configurations pipelines processing execution loops
-    notesArea.value = localStorage.getItem("ww_dashboard_notes") || "";
-    
-    notesArea.addEventListener("input", (e) => {
-        localStorage.setItem("ww_dashboard_notes", e.target.value);
+function setupNotes() {
+    const notes = document.getElementById("notesArea");
+    notes.value = localStorage.getItem("ww_dashboard_notes") || "";
+
+    notes.addEventListener("input", function (event) {
+        localStorage.setItem("ww_dashboard_notes", event.target.value);
     });
 }
